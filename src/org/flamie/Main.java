@@ -12,9 +12,7 @@ class Main {
         ArrayList<Character> word = new ArrayList<>();
 
         for(Character i : text.toCharArray()) {
-            for(int j = 0; j < 1; j++) {
-                word.add(j, i);
-            }
+            word.add(0, i);
         }
 
         Collections.reverse(word);
