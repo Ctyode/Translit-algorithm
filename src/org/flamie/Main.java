@@ -31,7 +31,7 @@ class Main {
                     russianWord.addLast("б");
                     break;
                 case 'c':
-                    if(word.get(i + 1).equals('h')) {
+                    if(i + 1 < word.size() && word.get(i + 1).equals('h')) {
                         russianWord.addLast("ч");
                         word.remove(i + 1);
                     } else {
@@ -57,7 +57,7 @@ class Main {
                     russianWord.addLast("и");
                     break;
                 case 'j':
-                    if (word.get(i + 1).equals('e')) {
+                    if (i + 1 < word.size() && word.get(i + 1).equals('e')) {
                         russianWord.addLast("э");
                         word.remove(i + 1);
                     } else {
@@ -89,11 +89,11 @@ class Main {
                     russianWord.addLast("р");
                     break;
                 case 's':
-                    if (word.get(i + 1).equals('c') && word.get(i + 2).equals('h')) {
+                    if (i + 2 < word.size() && word.get(i + 1).equals('c') && word.get(i + 2).equals('h')) {
                         russianWord.addLast("щ");
                         word.remove(i + 1);
                         word.remove(i + 1);
-                    } else if (word.get(i + 1).equals('h')) {
+                    } else if (i + 1 < word.size() && word.get(i + 1).equals('h')) {
                         russianWord.addLast("ш");
                         word.remove(i + 1);
                     } else {
@@ -116,17 +116,17 @@ class Main {
                     russianWord.addLast("х");
                     break;
                 case 'y':
-                    if (word.get(i + 1).equals(' ')) {
+                    if (i + 1 < word.size() && word.get(i + 1).equals(' ')) {
                         russianWord.addLast("ы");
                         russianWord.addLast("й");
                         System.out.println("ый");
-                    } else if (word.get(i + 1).equals('a')) {
+                    } else if (i + 1 < word.size() && word.get(i + 1).equals('a')) {
                         russianWord.addLast("я");
                         word.remove(i + 1);
-                    } else if (word.get(i + 1).equals('u')) {
+                    } else if (i + 1 < word.size() && word.get(i + 1).equals('u')) {
                         russianWord.addLast("ю");
                         word.remove(i + 1);
-                    } else if(word.get(i + 1).equals('o')) {
+                    } else if(i + 1 < word.size() && word.get(i + 1).equals('o')) {
                         russianWord.addLast("ё");
                         word.remove(i + 1);
                     } else {
@@ -134,7 +134,7 @@ class Main {
                     }
                     break;
                 case 'z':
-                    if (word.get(i + 1).equals('h')) {
+                    if (i + 1 < word.size() && word.get(i + 1).equals('h')) {
                         russianWord.addLast("ж");
                         word.remove(i + 1);
                     } else {
@@ -142,7 +142,7 @@ class Main {
                     }
                     break;
                 case '\'':
-                    if(word.get(i + 1).equals('e') || word.get(i + 1).equals('y')) {
+                    if(i + 1 < word.size() && word.get(i + 1).equals('e') || word.get(i + 1).equals('y')) {
                         russianWord.addLast("ъ");
                     } else {
                         russianWord.addLast("ь");
@@ -156,7 +156,6 @@ class Main {
 
         String collect = String.join("", russianWord);
         System.out.println(collect);
-
 
     }
 
